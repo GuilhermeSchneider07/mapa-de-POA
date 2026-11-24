@@ -143,9 +143,9 @@ async function initializeMap() {
         const streets = await loadStreets();
 
         // Carrega os pontos de referência
-        const points = await loadPoints();
+        const points = loadPoints();
+        points.addTo(map);
         points.bringToFront();
-
         // Organiza as camadas disponíveis
         const overlays = {
             "Bairros": neighborhoods,
