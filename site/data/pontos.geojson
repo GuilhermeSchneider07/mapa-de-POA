@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Mercado Público",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.2278, -30.0277]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Parque Farroupilha",
+        "categoria": "Parque",
+        "descricao": "Conhecido popularmente como Redenção."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.2177, -30.0378]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Praça do tambor",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.238619, -30.032170]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Basílica Nossa Senhora das Dores",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.235360, -30.032680]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Paróquia Nossa Senhora do Rosário",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.22562495511558, -30.02562495511558]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Museu doda Cultura Hip Hop",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.150237, -30.025763]
+      }
+    }
+  ]
+}
+
+
+
+    
