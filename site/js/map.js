@@ -99,45 +99,71 @@ async function loadStreets() {
     });
 }
 
+async function loadPoints() {
+    const response = await fetch("data/pontos.geojson");
+
+    if (!response.ok) {
+        throw new Error("Não foi possível carregar os pontos.");
+    }
+
+    const data = await response.json();
+
+    return L.geoJSON(data, {
+        pointToLayer: function(feature, latlng) {
+            return L.circleMarker(latlng, {
+                radius: 7,
+                color: "#d10f0f",
+                weight: 2,
+                fillColor: "#d97706",
+                fillOpacity: 1
+            });
+        },
+
+        onEachFeature: function(feature, layer) {
+            const properties = feature.properties;
+
+            layer.bindPopup(`
+                <strong>${properties.nome}</strong>
+                <br>
+                <small>${properties.categoria}</small>
+                <br>
+                ${properties.descricao}
+            `);
+        }
+    });
+}
 
 // Inicialização
+
 async function initializeMap() {
-
     try {
-
         const neighborhoods = await loadNeighborhoods();
-
         neighborhoods.addTo(map);
 
         const streets = await loadStreets();
 
+        // Carrega os pontos de referência
+        const points = await loadPoints();
+        points.bringToFront();
+
+        // Organiza as camadas disponíveis
         const overlays = {
             "Bairros": neighborhoods,
-            "Eixos de logradouros": streets
+            "Eixos de logradouros": streets,
+            "Pontos de referência": points
         };
 
         L.control.layers(
-            {
-                "OpenStreetMap": baseMap
-            },
+            { "OpenStreetMap": baseMap },
             overlays,
-            {
-                collapsed: false
-            }
+            { collapsed: false }
         ).addTo(map);
 
         map.fitBounds(neighborhoods.getBounds());
 
     } catch (error) {
-
-        console.error(
-            "Erro ao inicializar o mapa:",
-            error
-        );
-
-        alert(
-            "Não foi possível carregar os dados geográficos."
-        );
+        console.error("Erro ao inicializar o mapa:", error);
+        alert("Não foi possível carregar os dados geográficos.");
     }
 }
 
