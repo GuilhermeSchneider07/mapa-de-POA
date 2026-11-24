@@ -1,4 +1,3 @@
-
 const map = L.map("map").setView(
     [-30.0346, -51.2177],
     12
@@ -133,8 +132,6 @@ async function loadPoints() {
     });
 }
 
-// Inicialização
-
 async function initializeMap() {
     try {
         const neighborhoods = await loadNeighborhoods();
@@ -142,24 +139,43 @@ async function initializeMap() {
 
         const streets = await loadStreets();
 
-        // Carrega os pontos de referência
-        const points = loadPoints();
-        points.addTo(map);
-        points.bringToFront();
-        // Organiza as camadas disponíveis
         const overlays = {
             "Bairros": neighborhoods,
-            "Eixos de logradouros": streets,
-            "Pontos de referência": points
+            "Eixos de logradouros": streets
         };
 
-        L.control.layers(
+        // Cria o controle inicialmente
+        const layerControl = L.control.layers(
             { "OpenStreetMap": baseMap },
             overlays,
             { collapsed: false }
         ).addTo(map);
 
         map.fitBounds(neighborhoods.getBounds());
+
+        // Tenta carregar os pontos separadamente
+        try {
+            const points = await loadPoints();
+
+            console.log("Retorno de loadPoints:", points);
+            console.log("Tipo do retorno:", typeof points);
+            console.log("Possui addTo:", typeof points.addTo);
+
+            points.addTo(map);
+
+            layerControl.addOverlay(
+                points,
+                "Pontos de referência"
+            );
+
+            console.log(
+                "Pontos carregados:",
+                points.getLayers().length
+            );
+
+        } catch (error) {
+            console.error("Erro ao carregar pontos:", error);
+        }
 
     } catch (error) {
         console.error("Erro ao inicializar o mapa:", error);
