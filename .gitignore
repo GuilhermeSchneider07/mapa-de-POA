@@ -1,0 +1,21 @@
+
+# Ambiente Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Arquivos temporários
+.DS_Store
+*.log
+
+# Dados geográficos originais
+dados/raw/
+
+# Arquivos intermediários
+dados/processado
+
+# Arquivos auxiliares de shapefile
+*.shx
+*.dbf
+*.prj
+*.cpg
