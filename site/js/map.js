@@ -12,7 +12,6 @@ const baseMap = L.tileLayer(
     }
 ).addTo(map);
 
-
 // Estilo dos bairros
 function neighborhoodStyle() {
     return {
@@ -23,52 +22,37 @@ function neighborhoodStyle() {
     };
 }
 
-
 // Obter nome do bairro
 function getNeighborhoodName(properties) {
-
     const field = Object.keys(properties).find(
         key => key.toLowerCase() === "bairro"
     );
-
     return field
         ? properties[field]
         : "Bairro sem identificação";
 }
 
-
 // Carregar camada de bairros
 async function loadNeighborhoods() {
-
     const response = await fetch("data/bairros.geojson");
-
     if (!response.ok) {
         throw new Error("Não foi possível carregar os bairros.");
     }
-
     const data = await response.json();
-
     return L.geoJSON(data, {
-
         style: neighborhoodStyle,
-
         onEachFeature: function(feature, layer) {
-
             const name = getNeighborhoodName(
                 feature.properties
             );
-
             layer.bindPopup(name);
-
             layer.on("mouseover", function() {
                 layer.setStyle({
                     weight: 3,
                     fillOpacity: 0.30
                 });
-
                 layer.bringToFront();
             });
-
             layer.on("mouseout", function() {
                 layer.setStyle(neighborhoodStyle());
             });
@@ -76,20 +60,14 @@ async function loadNeighborhoods() {
     });
 }
 
-
 // Carregar camada de logradouros
 async function loadStreets() {
-
     const response = await fetch("data/logradouros.geojson");
-
     if (!response.ok) {
         throw new Error("Não foi possível carregar os logradouros.");
     }
-
     const data = await response.json();
-
     return L.geoJSON(data, {
-
         style: {
             color: "#d97706",
             weight: 1,
@@ -98,15 +76,13 @@ async function loadStreets() {
     });
 }
 
+// Carregar camada de pontos de referência
 async function loadPoints() {
     const response = await fetch("data/pontos.geojson");
-
     if (!response.ok) {
         throw new Error("Não foi possível carregar os pontos.");
     }
-
     const data = await response.json();
-
     return L.geoJSON(data, {
         pointToLayer: function(feature, latlng) {
             return L.circleMarker(latlng, {
@@ -117,66 +93,38 @@ async function loadPoints() {
                 fillOpacity: 1
             });
         },
-
         onEachFeature: function(feature, layer) {
             const properties = feature.properties;
-
             layer.bindPopup(`
-                <strong>${properties.nome}</strong>
+                <strong>${properties.nome || "Sem identificação"}</strong>
                 <br>
-                <small>${properties.categoria}</small>
+                <small>${properties.categoria || ""}</small>
                 <br>
-                ${properties.descricao}
+                ${properties.descricao || ""}
             `);
         }
     });
 }
 
+// Inicialização
 async function initializeMap() {
     try {
         const neighborhoods = await loadNeighborhoods();
         neighborhoods.addTo(map);
-
         const streets = await loadStreets();
-
+        const points = await loadPoints();
+        points.addTo(map);
         const overlays = {
             "Bairros": neighborhoods,
-            "Eixos de logradouros": streets
+            "Eixos de logradouros": streets,
+            "Pontos de referência": points
         };
-
-        // Cria o controle inicialmente
-        const layerControl = L.control.layers(
+        L.control.layers(
             { "OpenStreetMap": baseMap },
             overlays,
             { collapsed: false }
         ).addTo(map);
-
         map.fitBounds(neighborhoods.getBounds());
-
-        // Tenta carregar os pontos separadamente
-        try {
-            const points = await loadPoints();
-
-            console.log("Retorno de loadPoints:", points);
-            console.log("Tipo do retorno:", typeof points);
-            console.log("Possui addTo:", typeof points.addTo);
-
-            points.addTo(map);
-
-            layerControl.addOverlay(
-                points,
-                "Pontos de referência"
-            );
-
-            console.log(
-                "Pontos carregados:",
-                points.getLayers().length
-            );
-
-        } catch (error) {
-            console.error("Erro ao carregar pontos:", error);
-        }
-
     } catch (error) {
         console.error("Erro ao inicializar o mapa:", error);
         alert("Não foi possível carregar os dados geográficos.");
