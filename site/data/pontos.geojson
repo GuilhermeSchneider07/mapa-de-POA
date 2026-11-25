@@ -6,7 +6,7 @@
       "properties": {
         "nome": "Mercado Público",
         "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "descricao": "No centro do prédio existe um NEGÓCIO ao Orixá Bará,."
       },
       "geometry": {
         "type": "Point",
@@ -16,9 +16,9 @@
     {
       "type": "Feature",
       "properties": {
-        "nome": "Parque Farroupilha",
+        "nome": "Paque da Redenção",
         "categoria": "Parque",
-        "descricao": "Conhecido popularmente como Redenção."
+        "descricao": "Apesar de seu nome oficial ser Parque Farroupilha desde 1935, o parque ainda é chamado de Parque da Redenção, nome dado em homenagem a abolição da escravidão no estado em 1884."
       },
       "geometry": {
         "type": "Point",
@@ -42,7 +42,7 @@
       "properties": {
         "nome": "Basílica Nossa Senhora das Dores",
         "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "descricao": "."
       },
       "geometry": {
         "type": "Point",
@@ -72,7 +72,32 @@
         "type": "Point",
         "coordinates": [-51.150237, -30.025763]
       }
+    },
+        {
+      "type": "Feature",
+      "properties": {
+        "nome": "Museu doda Cultura Hip Hop",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.230687544714286, -30.083262264968152]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome": "Largo Zumbi dos Palmares",
+        "categoria": "Histórico",
+        "descricao": "Importante patrimônio histórico de Porto Alegre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.2262116, -30.0381072]
+      }
     }
+
   ]
 }
 
