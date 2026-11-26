@@ -42,7 +42,7 @@
       "properties": {
         "nome": "Basílica Nossa Senhora das Dores",
         "categoria": "Templo Religioso",
-        "descricao": "A Igreja fica localizada em frente a onde era o Pelourinho de Porto Alegre, local onde pessoas escravizadas eram comercializadas e submetidas diariamente a violências físicas e psicológicas. Sua primeira pedra foi colocada em 1807, mas a última levou mais de 100 anos: a demora para a finalização da construção da Igreja supostamente é mérito da maldição lançada por Josino, escravizado que trabalhou na construção da Igreja e foi condenado à morte por roubo. Todavia, para provar sua inocência, ele jurou que o responsável pela obra nunca a veria construída, o que de fato aconteceu."
+        "descricao": "A Igreja fica localizada em frente aonde era o Pelourinho de Porto Alegre, local onde pessoas escravizadas eram comercializadas e submetidas diariamente a violências físicas e psicológicas. Sua primeira pedra foi colocada em 1807, mas a última levou mais de 100 anos: a demora para a finalização da construção da Igreja supostamente é mérito da maldição lançada por Josino, escravizado que trabalhou na construção da Igreja e foi condenado à morte por roubo. Todavia, para provar sua inocência, ele jurou que o responsável pela obra nunca a veria construída, o que de fato aconteceu."
       },
       "geometry": {
         "type": "Point",
