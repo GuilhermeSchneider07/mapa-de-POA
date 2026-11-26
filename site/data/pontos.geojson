@@ -6,7 +6,7 @@
       "properties": {
         "nome": "Mercado Público",
         "categoria": "Histórico",
-        "descricao": "No centro do prédio existe um NEGÓCIO ao Orixá Bará,."
+        "descricao": "Foi construído entre os anos de 1864 e 1869 por pessoas escravizadas cujo orixá cultuado era Bará, detentor das chaves que abrem oportunidades e caminhos, e, para homenageá-lo, teriam sido eles que construíram o assentamento presente no centro do mercado. Hoje, o prédio, além de um importante centro comercial para a população, é local de diversas festividades e manifestações culturais afro-brasileiras."
       },
       "geometry": {
         "type": "Point",
@@ -16,9 +16,9 @@
     {
       "type": "Feature",
       "properties": {
-        "nome": "Paque da Redenção",
+        "nome": "Parque da Redenção",
         "categoria": "Parque",
-        "descricao": "Apesar de seu nome oficial ser Parque Farroupilha desde 1935, o parque ainda é chamado de Parque da Redenção, nome dado em homenagem a abolição da escravidão no estado em 1884."
+        "descricao": "Em 1884, a Câmara Municipal renomeou a Várzea do Bom Fim para Parque da Redenção em homenagem ao movimento abolicionista e à libertação da população escravizada. O terreno, que fazia parte da área da Colônia Africana, era o local onde a população negra realizava festas e batuques."
       },
       "geometry": {
         "type": "Point",
@@ -29,8 +29,8 @@
       "type": "Feature",
       "properties": {
         "nome": "Praça do tambor",
-        "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "categoria": "Monumento",
+        "descricao": "A praça Brigadeiro Sampaio já teve vários nomes ao longo de sua história: o primeiro foi Largo da Forca, uma vez que o local servia como palco para execuções cerimoniais de escravizados. Entretanto, após a Guerra dos Farrapos, o local foi ressignificado com a crescente urbanização, deixando a sua trágica origem enterrada. Atualmente, a praça conta com uma instalação “Tambor”, símbolo escolhido pelo Museu do Percurso Negro para representar algo que “percute e repercute”, a fim de manter viva a memória daqueles que ali foram brutalmemnte violentados tantos anos antes."
       },
       "geometry": {
         "type": "Point",
@@ -41,8 +41,8 @@
       "type": "Feature",
       "properties": {
         "nome": "Basílica Nossa Senhora das Dores",
-        "categoria": "Histórico",
-        "descricao": "."
+        "categoria": "Templo Religioso",
+        "descricao": "A Igreja fica localizada em frente a onde era o Pelourinho de Porto Alegre, local onde pessoas escravizadas eram comercializadas e submetidas diariamente a violências físicas e psicológicas. Sua primeira pedra foi colocada em 1807, mas a última levou mais de 100 anos: a demora para a finalização da construção da Igreja supostamente é mérito da maldição lançada por Josino, escravizado que trabalhou na construção da Igreja e foi condenado à morte por roubo. Todavia, para provar sua inocência, ele jurou que o responsável pela obra nunca a veria construída, o que de fato aconteceu."
       },
       "geometry": {
         "type": "Point",
@@ -53,8 +53,8 @@
       "type": "Feature",
       "properties": {
         "nome": "Paróquia Nossa Senhora do Rosário",
-        "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "categoria": "Templo Religioso",
+        "descricao": "A história da Paróquia tem início 41 anos antes da sua pedra fundamental com a Irmandade de Nossa Senhora do Rosário de Porto Alegre, congregação fundada por homens e mulheres escravizados e livres. Essa confraria se tornou um espaço de construção política e social, tendo um papel essencial na construção identitária dos grupos que representava. A Irmandade não possuía igreja própria e, por seus cânticos e danças serem desaprovados pelas outras congregações, buscaram construir uma igreja que lhes permitisse exercer a sua fé sem restrições. Assim, a Igreja foi erguida em 1828, de modo que ia além do culto: proporcionava a seus membros a terem maior autonomia por meios educacionais."
       },
       "geometry": {
         "type": "Point",
@@ -64,9 +64,9 @@
     {
       "type": "Feature",
       "properties": {
-        "nome": "Museu doda Cultura Hip Hop",
-        "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "nome": "Museu da Cultura Hip Hop",
+        "categoria": "Museu",
+        "descricao": "Com sua inauguração em dezembro de 2023, foi o primeiro museu do Hip Hop da América Latina. Seu principal objetivo é a preservação da cultura e história Hip Hop gaúcho através de suas exposições e acervos, atividades educativas e eventos culturais."
       },
       "geometry": {
         "type": "Point",
@@ -76,9 +76,9 @@
         {
       "type": "Feature",
       "properties": {
-        "nome": "Museu doda Cultura Hip Hop",
-        "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "nome": "Dandara dos Palmares",
+        "categoria": "Monumento",
+        "descricao": "Escultura inaugurada em primeiro de agosto de 2026 de autoria dos artistas Adriana Xaplin, Jeanice Dias Ramos, Paulo Corrêa, Rafael do Nascimento Garcia, Ricardo Cardoso, Sabrina Stephanou, Tiago Gonçalves e Vinicius Vieira, homenageia a guerreira e uma das líderes do Quilombo dos Palmares."
       },
       "geometry": {
         "type": "Point",
@@ -88,9 +88,21 @@
     {
       "type": "Feature",
       "properties": {
+        "nome": "Colônia Africana",
+        "categoria": "Área",
+        "descricao": "Apesar de não existirem documentos que afirmem de forma precisa quando as primeiras pessoas libertas se instalaram, ou mesmo onde se instalaram, é fato que, após 1884, as regiões que hoje englobam desde o bairro Rio Branco e Moinhos de Vento até o bairro Santana formaram a chamada Colônia Africana. Os registros são restritos a jornais que retratam um local caracterizado por criminalidade e pobreza, com poucos serviços urbanos presentes, à exceção da repressão policial. A diminuição da população negra na região é associada com a criação de um imposto para regiões suburbanas, obrigando a população a migrar para regiões mais ao leste do território da capital."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.202678, -30.033806]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "nome": "Largo Zumbi dos Palmares",
-        "categoria": "Histórico",
-        "descricao": "Importante patrimônio histórico de Porto Alegre."
+        "categoria": "Área",
+        "descricao": "A região hoje conhecida como Cidade Baixa era chamada, antes da urbanização, de 'Emboscada': um local com vegetação densa e de difícil acesso, onde escondiam-se os escravizados fugitivos. Em 2002, foi aprovada a Lei 9035/02, pela prefeitura de Porto Alegre, que mudou oficialmente o nome de Largo da Epatur para Largo Zumbi dos Palmares, em homenagem ao líder do Quilombo dos Palmares, que resistiu à escravidão no Brasil Colonial."
       },
       "geometry": {
         "type": "Point",
