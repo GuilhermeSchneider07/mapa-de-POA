@@ -60,22 +60,6 @@ async function loadNeighborhoods() {
     });
 }
 
-// Carregar camada de logradouros
-async function loadStreets() {
-    const response = await fetch("data/logradouros.geojson");
-    if (!response.ok) {
-        throw new Error("Não foi possível carregar os logradouros.");
-    }
-    const data = await response.json();
-    return L.geoJSON(data, {
-        style: {
-            color: "#d97706",
-            weight: 1,
-            opacity: 0.65
-        }
-    });
-}
-
 // Carregar camada de pontos de referência
 async function loadPoints() {
     const response = await fetch("data/pontos.geojson");
@@ -111,20 +95,23 @@ async function initializeMap() {
     try {
         const neighborhoods = await loadNeighborhoods();
         neighborhoods.addTo(map);
-        const streets = await loadStreets();
+
         const points = await loadPoints();
         points.addTo(map);
+
         const overlays = {
             "Bairros": neighborhoods,
-            "Eixos de logradouros": streets,
             "Pontos de referência": points
         };
+
         L.control.layers(
             { "OpenStreetMap": baseMap },
             overlays,
             { collapsed: false }
         ).addTo(map);
+
         map.fitBounds(neighborhoods.getBounds());
+
     } catch (error) {
         console.error("Erro ao inicializar o mapa:", error);
         alert("Não foi possível carregar os dados geográficos.");
